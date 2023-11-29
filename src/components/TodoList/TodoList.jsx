@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import TodoForm from "./TodoForm";
+import AddTodo from "../AddTodo/AddTodo";
 
 export default function TodoList() {
   const [todos, setTodos] = useState([
@@ -7,9 +7,10 @@ export default function TodoList() {
     {id: '124', text: '공부하기', status: 'active'},
   ]);
 
-  const handleAdd = (todo) => {
-    setTodos(todos.concat(todo));
-  }
+  const handleAdd = (todo) => 
+    // 새로운 투두를 todos에 업데이트 해야 함
+    setTodos([...todos, todo]);
+  
 
   return (
     <section>
@@ -18,7 +19,7 @@ export default function TodoList() {
           todos.map(item => <li key={item.id}>{item.text}</li>)
         }
       </ul>
-      <TodoForm onAdd={handleAdd}/>
+      <AddTodo onAdd={handleAdd}/>
     </section>
   );
 }
