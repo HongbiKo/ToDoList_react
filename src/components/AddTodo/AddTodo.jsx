@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import {v4 as uuidv4} from 'uuid';
+
 export default function AddTodo({onAdd}) {
   const [text, setText] = useState("");
+  
   const handleChange = (e) => {
       setText(e.target.value);
   }
@@ -15,7 +17,7 @@ export default function AddTodo({onAdd}) {
   }
   return (
     <form onSubmit={handleSubmit}>
-      <input required type="text" name="todo" placeholder="Add Todo" value={text} onChange={handleChange}></input>
+      <input type="text" name="todo" placeholder="Add Todo" value={text} onChange={handleChange}></input>
       <button>Add</button>
     </form>
   );
