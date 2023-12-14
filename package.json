@@ -43,5 +43,5 @@
   "devDependencies": {
     "eslint-config-react-app": "^7.0.1"
   },
-  "homepage" : "https://hongbiko.github.io/ToDoList_react/"
+  "homepage": "https://hongbiko.github.io/ToDoList_react/"
 }
